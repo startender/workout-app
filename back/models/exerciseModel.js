@@ -7,8 +7,8 @@ const exerciseSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
-    imageId: {
-      type: Number,
+    imageName: {
+      type: String,
       required: true,
     },
   },
@@ -16,7 +16,7 @@ const exerciseSchema = mongoose.Schema(
     minimize: false,
     timestamps: true,
   }
-)
+);
 
 const Exercise = mongoose.model("Exercise", exerciseSchema);
 

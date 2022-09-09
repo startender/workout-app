@@ -1,11 +1,11 @@
-import Exercise from "../../models/exerciseModel.js";
+import Exercise from "../../../models/exerciseModel.js";
 import asyncHandler from "express-async-handler";
-import ExerciseLog from "../../models/exersiceLogModel.js";
-// @desc Add new exercise
+import ExerciseLog from "../../../models/exersiceLogModel.js";
+// @desc Create new exercise
 // @desc POST /api/exercises/log
 // @desc Private
 
-export const addNewExerciseLog = asyncHandler(async (req, res) => {
+export const createNewExerciseLog = asyncHandler(async (req, res) => {
   const { exerciseId, times } = req.body;
 
   let timesArray = [];
@@ -26,13 +26,23 @@ export const addNewExerciseLog = asyncHandler(async (req, res) => {
     }
   }
 
-  const exerciseLog = await Exercise.create({
+  const exerciseLog = await ExerciseLog.create({
     user: req.user._id,
     exercise: exerciseId,
     times: timesArray,
-  })
+  });
 
+  res.json(exerciseLog);
+});
 
+// @desc Get exerciseLog
+// @desc POST /api/exercises/log/:id
+// @desc Private
 
-  res.json(exerciseId);
+export const getExerciseLog = asyncHandler(async (req, res) => {
+  const exerciseLog = await ExerciseLog.findById(req.params.id).populate(
+    "exercise",
+    "name imageId"
+  );
+  res.json(exerciseLog);
 });
