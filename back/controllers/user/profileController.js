@@ -1,8 +1,7 @@
-export const getUserProfile = (req, res) => {
-  const user = {
-    name: "Ilya",
-    age: 20,
-  };
+import User from "../../models/userModel.js";
+import asyncHandler from 'express-async-handler'
 
-  res.json(user);
-};
+export const getUserProfile = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.user._id).select('-password')
+
+})
