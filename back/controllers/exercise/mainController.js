@@ -14,3 +14,16 @@ export const addNewExercise = asyncHandler(async (req, res) => {
   res.json(exercise)
 })
 
+// @desc Add new exercise
+// @desc POST /api/exercises
+// @desc Private
+
+export const getExercise = asyncHandler(async (req, res) => {
+  const { name, times, image } = req.body
+
+  const exercise = await Exercise.create({
+    name, times, image,
+  })
+
+  res.json(exercise)
+})
