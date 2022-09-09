@@ -8,7 +8,7 @@ const exerciseSchema = mongoose.Schema(
       required: true,
     },
     image: {
-      before: String,
+      type: String,
       required: true,
     },
   },
@@ -20,4 +20,4 @@ const exerciseSchema = mongoose.Schema(
 
 const Exercise = mongoose.model("Exercise", exerciseSchema);
 
-export default User;
+export default Exercise;
