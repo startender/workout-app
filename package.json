@@ -1,0 +1,36 @@
+{
+  "name": "workout-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node back/server",
+    "server": "nodemon back/server",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/startender/workout-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/startender/workout-app/issues"
+  },
+  "homepage": "https://github.com/startender/workout-app#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "mongoose": "^6.6.0"
+  },
+  "devDependencies": {
+    "colors": "^1.4.0",
+    "concurrently": "^7.4.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.19"
+  }
+}
