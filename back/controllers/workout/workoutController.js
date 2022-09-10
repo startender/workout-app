@@ -12,21 +12,36 @@ export const createNewWorkout = asyncHandler(async (req, res) => {
 
   const workout = await Workout.create({
     name,
-    exercises: exerciseIds
+    exercises: exerciseIds,
   })
 
   res.json(workout)
 })
 
 // @desc  Get workput
-// @route GET /api/workouts
+// @route GET /api/workouts/:id
 // @access Private
 
-export const getWorkouts = asyncHandler(async (req, res) => {
-  const workouts = await Workout.find({}).populate('exercises')
+export const getWorkout = asyncHandler(async (req, res) => {
+  const workouts = await Workout.findById(req.params.id)
+    .populate('exercises')
+    .lean()
+
+  const minutes = Math.ceil(workout.exercises.length * 3.7)
  
-  res.json(workouts)
+  res.json({...workout, minutes})
 })
+
+// @desc    Get workouts
+// @route   GET /api/workouts
+// @access  Private
+
+export const getWorkouts = asyncHandler(async (req, res) => {
+	const workouts = await Workout.find({}).populate('exercises')
+
+	res.json(workouts)
+})
+
 
 // @desc   Update workout
 // @route  PUT /api/workouts

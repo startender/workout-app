@@ -1,5 +1,5 @@
 import asyncHandler from "express-async-handler";
-import ExerciseLog from "../../../models/exersiceLogModel.js";
+import ExerciseLog from "../../../models/exerciseLogModel.js";
 // @desc Create new exercise
 // @desc POST /api/exercises/log
 // @desc Private

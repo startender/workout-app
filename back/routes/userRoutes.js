@@ -1,4 +1,4 @@
-import express, { Router } from 'express'
+import express from 'express'
 import { registerUser } from '../controllers/user/regController.js'
 import { getUserProfile } from '../controllers/user/profileController.js'
 import { protect } from '../middleware/authMiddleware.js'

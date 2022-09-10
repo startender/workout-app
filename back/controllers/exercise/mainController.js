@@ -1,4 +1,4 @@
-import Exercise from "../../../models/exerciseModel.js";
+import Exercise from '../../models/exerciseModel.js'
 import asyncHandler from "express-async-handler";
 
 // @desc Create new exercise

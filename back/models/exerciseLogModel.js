@@ -9,7 +9,7 @@ const exerciseLogSchema = mongoose.Schema(
       ref: "User",
       required: true,
     },
-    exercise: { type: ObjectId, ref: 'Exercise', required: true },
+    exercise: { type: ObjectId, ref: "Exercise", required: true },
     completed: { type: Boolean, default: false },
     times: [
       {

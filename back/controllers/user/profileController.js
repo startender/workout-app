@@ -1,6 +1,6 @@
 import User from "../../models/userModel.js";
 import asyncHandler from "express-async-handler";
-import ExerciseLog from "../../models/exersiceLogModel.js";
+import ExerciseLog from "../../models/exerciseLogModel.js";
 import WorkoutLog from '../../models/workoutLogModel.js'
 
 // @desc Get user profile
