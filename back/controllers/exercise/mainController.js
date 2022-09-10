@@ -18,11 +18,11 @@ export const createNewExercise = asyncHandler(async (req, res) => {
 });
 
 
-// @desc Update exercises
+// @desc Update exercise
 // @route PUT /api/exercises
 // @access Private
 
-export const updateExercises = asyncHandler(async (req, res) => {
+export const updateExercise = asyncHandler(async (req, res) => {
   const { name, times, imageName, exerciseId } = req.body
 
   const exercise = await Exercise.findById(exerciseId)
@@ -34,6 +34,7 @@ export const updateExercises = asyncHandler(async (req, res) => {
   exercise.name = name
   exercise.times = times
   exercise.imageName = imageName
+  
   const updatedExercise = await exercise.save()
 
   res.json(updatedExercise)
