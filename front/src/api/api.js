@@ -1,11 +1,11 @@
-import axios from 'axios'
+import axios from "axios";
 
 const instance = axios.create({
-  baseURL: '/api',
+  baseURL: "/api",
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
-})
+});
 
 export const $api = async ({ url, type = "GET", auth = true, body }) => {
   if (auth) {
@@ -41,4 +41,4 @@ export const $api = async ({ url, type = "GET", auth = true, body }) => {
       ? error.response.data.message
       : error.message;
   }
-}
+};

@@ -48,7 +48,6 @@ const Hamburger = () => {
         </ul>
       </nav>
     </div>
-  
   );
 };
 

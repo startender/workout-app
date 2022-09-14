@@ -1,8 +1,7 @@
-import cn from 'classnames'
-import styles from './Counters.module.scss'
+import cn from "classnames";
+import styles from "./Counters.module.scss";
 
-const Counters = ({ minutes, workouts, kgs, type
-}) => {
+const Counters = ({ minutes, workouts, kgs, type }) => {
   return (
     <div
       className={cn(styles.wrapper, {
@@ -23,6 +22,6 @@ const Counters = ({ minutes, workouts, kgs, type
       </div>
     </div>
   );
-}
+};
 
 export default Counters

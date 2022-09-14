@@ -6,6 +6,7 @@ import Profile from "./components/pages/Profile/Profile";
 import SingleWorkout from "./components/pages/Workouts/SingleWorkout";
 import ListWorkouts from "./components/pages/Workouts/ListWorkouts";
 import SingleExercise from "./components/pages/Exercises/SingleExercise";
+
 export const routes = [
   {
     path: "/",

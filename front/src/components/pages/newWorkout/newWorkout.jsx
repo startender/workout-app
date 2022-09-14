@@ -3,8 +3,7 @@ import ReactSelect from "react-select";
 import { Link } from "react-router-dom";
 import Layout from "../../common/Layout";
 
-import bgImage from "../../../images/new-workout-bg.jpeg";
-
+import bgImage from "../../../images/new-workout-bg.jpg";
 import Field from "../../ui/Field/Field";
 import Button from "../../ui/Button/Button";
 import Alert from "../../ui/Alert/Alert";
@@ -37,7 +36,7 @@ const NewWorkout = () => {
     "Create new workout",
     ({ exIds }) =>
       $api({
-        url: "workouts",
+        url: "/workouts",
         type: "POST",
         body: { name, exerciseIds: exIds },
       }),
@@ -73,29 +72,28 @@ const NewWorkout = () => {
             onChange={(e) => setName(e.target.value)}
             required
           />
-          <Link to='/new-exercise'
-          className="dark-link">
+          <Link to="/new-exercise" className="dark-link">
             Add new exercise
           </Link>
           {isSuccess && data && (
             <ReactSelect
-            classNamePrefix='select2-selection'
-            placeholder='Exercises...'
-            title='Exercises'
-            options={data.map(ex => ({
-              value: ex._id,
-              label: ex.name,
-            }))}
-            value={exercisesCurrent}
-            onChange={setExercisesCurrent}
-            isMulti={true}
+              classNamePrefix="select2-selection"
+              placeholder="Exercises..."
+              title="Exercises"
+              options={data.map((ex) => ({
+                value: ex._id,
+                label: ex.name,
+              }))}
+              value={exercisesCurrent}
+              onChange={setExercisesCurrent}
+              isMulti={true}
             />
           )}
-          <Button text='Create' callback={() => {}} />
+          <Button text="Create" callback={() => {}} />
         </form>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default NewWorkout

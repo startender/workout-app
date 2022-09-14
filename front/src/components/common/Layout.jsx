@@ -20,4 +20,4 @@ const Layout = ({ children, bgImage, heading = "", backLink = "/" }) => {
   );
 };
 
-export default Layout
+export default Layout;

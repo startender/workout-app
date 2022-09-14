@@ -88,4 +88,4 @@ const NewExercise = () => {
   );
 };
 
-export default NewExercise;
+export default NewExercise

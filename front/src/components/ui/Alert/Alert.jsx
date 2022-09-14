@@ -17,4 +17,4 @@ const Alert = ({ type = "success", text }) => {
   );
 };
 
-export default Alert;
+export default Alert

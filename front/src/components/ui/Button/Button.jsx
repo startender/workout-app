@@ -1,5 +1,5 @@
 import React from "react";
-import styles from './Button.module.scss'
+import styles from "./Button.module.scss";
 
 const Button = ({ text, callback, type = "purple" }) => {
   return (
@@ -11,4 +11,4 @@ const Button = ({ text, callback, type = "purple" }) => {
   );
 };
 
-export default Button;
+export default Button
